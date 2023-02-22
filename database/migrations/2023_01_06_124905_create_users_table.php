@@ -20,6 +20,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->float('balance')->default(0.00);
+            $table->bigInteger('loyalty')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

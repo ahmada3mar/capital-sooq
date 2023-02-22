@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('values', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('stock')->nullable();
             $table->float('additional_cost')->default(0.00);
 
             $table->unsignedBigInteger('attribute_id');

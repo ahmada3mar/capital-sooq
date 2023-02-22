@@ -34,6 +34,7 @@ return new class extends Migration
             $table->foreign('plan')
                 ->on('plans')
                 ->references('id')->onDelete('RESTRICT');
+            $table->date('expired_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
