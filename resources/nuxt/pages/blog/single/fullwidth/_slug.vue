@@ -1,0 +1,439 @@
+<template>
+    <main class="main">
+        <nav class="breadcrumb-nav mb-0">
+            <div class="container-fluid">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <nuxt-link :to='localePath("/blog/classic")'>Blog</nuxt-link>
+                    </li>
+                    <li class="breadcrumb-item active">Fullwidth</li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="page-content">
+            <template v-if="blog">
+                <figure
+                    class="entry-media entry-media-fullwidth"
+                    :class="blog.type === 'video'? 'entry-video':''"
+                    v-if="blog.image.length <=1"
+                >
+                    <img
+                        v-lazy="`${baseUrl}${blog.image[0].url}`"
+                        alt="blog"
+                        :width="blog.image[0].width"
+                        :height="blog.image[0].height"
+                    />
+                    <a
+                        href="https://www.youtube.com/watch?v=vBPgmASQ1A0"
+                        @click.prevent="openVideoModal"
+                        class="btn-video btn-iframe"
+                        v-if="blog.type === 'video'"
+                    >
+                        <i class="icon-play"></i>
+                    </a>
+                </figure>
+                <figure class="entry-media entry-gallery" v-else-if="blog.image.length >1">
+                    <div class="swiper-carousel" :class="'swiper-single-media-' + blog.id">
+                        <div v-swiper:swiper2="carouselSettingSingle">
+                            <div class="swiper-wrapper">
+                                <div
+                                    class="swiper-slide"
+                                    v-for="(image, index) in blog.image"
+                                    :key="index"
+                                >
+                                    <img
+                                        v-lazy="`${baseUrl}${image.url}`"
+                                        alt="blog"
+                                        :width="image.width"
+                                        :height="image.height"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </template>
+            <div class="container skeleton-body" :class="{loaded: loaded}">
+                <div class="skel-single-post"></div>
+                <template v-if="blog">
+                    <article class="entry single-entry entry-fullwidth">
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <div class="entry-body">
+                                    <div class="entry-meta">
+                                        <span class="entry-author">
+                                            by
+                                            <nuxt-link
+                                                :to="'/blog/single/default/' + blog.slug"
+                                            >{{blog.author}}</nuxt-link>
+                                        </span>
+                                        <span class="meta-separator">|</span>
+                                        <nuxt-link
+                                            :to="'/blog/single/default/' + blog.slug"
+                                        >{{ date }}</nuxt-link>
+                                        <span class="meta-separator">|</span>
+                                        <nuxt-link
+                                            :to="'/blog/single/default/' + blog.slug"
+                                        >{{ blog.comments }} Comments</nuxt-link>
+                                    </div>
+
+                                    <h2 class="entry-title">
+                                        <nuxt-link
+                                            :to="'/blog/single/default/' + blog.slug"
+                                        >{{ blog.title }}</nuxt-link>
+                                    </h2>
+                                    <div class="entry-cats" v-if="blog.blog_categories">
+                                        in&nbsp;
+                                        <span
+                                            v-for="(cat, index) of blog.blog_categories"
+                                            :key="index"
+                                        >
+                                            <nuxt-link
+                                                :to="'/blog/single/default/' + blog.slug"
+                                            >{{ cat.name }}</nuxt-link>
+                                            {{ blog.blog_categories.length - 1 > index ? ', ' : '' }}
+                                        </span>
+                                    </div>
+
+                                    <div class="entry-content editor-content">
+                                        <p>{{ blog.content }}</p>
+
+                                        <div class="pb-1"></div>
+
+                                        <img
+                                            v-lazy="'./images/blog/single/fullwidth/2.jpg'"
+                                            alt="image"
+                                        />
+
+                                        <div class="pb-1"></div>
+
+                                        <p>
+                                            Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent
+                                            <a
+                                                href="#"
+                                            >elementum hendrerit</a> tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+                                        </p>
+
+                                        <blockquote>
+                                            <p>“ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Vivamus vestibulum ntulla nec ante. ”</p>
+                                        </blockquote>
+
+                                        <h3>Donec nec justo eget felis facilisis fermentum.</h3>
+
+                                        <p>Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus.</p>
+
+                                        <p>Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+
+                                        <div class="pb-1"></div>
+
+                                        <img
+                                            v-lazy="'./images/blog/single/fullwidth/3.jpg'"
+                                            alt="image"
+                                        />
+
+                                        <div class="pb-1"></div>
+
+                                        <p>Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+                                    </div>
+
+                                    <div class="entry-footer row no-gutters">
+                                        <div class="col">
+                                            <div class="entry-tags">
+                                                <span>Tags:</span>
+                                                <a href="#">photography</a>
+                                                <a href="#">style</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 order-lg-first mb-2 mb-lg-0" sticky-container>
+                                <div
+                                    class="sticky-content"
+                                    v-sticky="shouldSticky"
+                                    sticky-offset="{ top: 69 }"
+                                >
+                                    <div
+                                        class="social-icons social-icons-colored social-icons-vertical"
+                                    >
+                                        <span class="social-label">SHARE:</span>
+                                        <a
+                                            href="#"
+                                            class="social-icon social-facebook"
+                                            title="Facebook"
+                                            target="_blank"
+                                        >
+                                            <i class="icon-facebook-f"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="social-icon social-twitter"
+                                            title="Twitter"
+                                            target="_blank"
+                                        >
+                                            <i class="icon-twitter"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="social-icon social-pinterest"
+                                            title="Pinterest"
+                                            target="_blank"
+                                        >
+                                            <i class="icon-pinterest"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="social-icon social-linkedin"
+                                            title="Linkedin"
+                                            target="_blank"
+                                        >
+                                            <i class="icon-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="entry-author-details">
+                            <figure class="author-media">
+                                <a href="#">
+                                    <img v-lazy="'./images/blog/single/author.jpg'" alt="User name" />
+                                </a>
+                            </figure>
+
+                            <div class="author-body">
+                                <div class="author-header row no-gutters flex-column flex-md-row">
+                                    <div class="col">
+                                        <h4>
+                                            <a href="#">John Doe</a>
+                                        </h4>
+                                    </div>
+
+                                    <div class="col-auto mt-1 mt-md-0">
+                                        <a href="#" class="author-link">
+                                            View all posts by John Doe
+                                            <i
+                                                class="icon-long-arrow-right"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="author-content">
+                                    <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <nav class="pager-nav">
+                        <nuxt-link
+                            class="pager-link pager-link-prev"
+                            :to="'/blog/single/fullwidth/'+ prevBlog.slug"
+                            v-if="prevBlog"
+                        >
+                            Previous Post
+                            <span class="pager-link-title">{{prevBlog.title}}</span>
+                        </nuxt-link>
+                        <nuxt-link :to='localePath("#")' class="pager-link" v-else-if="!prevBlog">
+                            <span class="page-link-title ml-4">This is the first blog.</span>
+                        </nuxt-link>
+                        <nuxt-link
+                            class="pager-link pager-link-next"
+                            :to="'/blog/single/fullwidth/'+ nextBlog.slug"
+                            v-if="nextBlog"
+                        >
+                            Next Post
+                            <span class="pager-link-title">{{nextBlog.title}}</span>
+                        </nuxt-link>
+                        <nuxt-link :to='localePath("#")' class="pager-link" v-else-if="!nextBlog">
+                            <span class="page-link-title mr-4">This is the last blog.</span>
+                        </nuxt-link>
+                    </nav>
+
+                    <div class="related-posts">
+                        <h3 class="title">Related Posts</h3>
+
+                        <p
+                            class="blogs-info"
+                            v-if="relatedBlogs.length ===0"
+                        >No related posts were found.</p>
+
+                        <div class="swiper-carousel swiper-related">
+                            <div v-swiper:swiper1="carouselSetting">
+                                <div class="swiper-wrapper">
+                                    <div
+                                        class="swiper-slide"
+                                        v-for="(blog, index) in relatedBlogs"
+                                        :key="index"
+                                    >
+                                        <blog-one
+                                            :blog="blog"
+                                            class="entry-grid"
+                                            :isContent="false"
+                                            :isAuthor="false"
+                                        ></blog-one>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-dots d-md-none"></div>
+                        </div>
+                    </div>
+
+                    <div class="comments">
+                        <h3 class="title">0 Comment</h3>
+                    </div>
+
+                    <div class="reply">
+                        <div class="heading">
+                            <h3 class="title">Leave A Reply</h3>
+
+                            <p
+                                class="title-desc"
+                            >Your email address will not be published. Required fields are marked *</p>
+                        </div>
+
+                        <form action="#">
+                            <label for="reply-message" class="sr-only">Comment</label>
+                            <textarea
+                                name="reply-message"
+                                id="reply-message"
+                                cols="30"
+                                rows="4"
+                                class="form-control"
+                                required
+                                placeholder="Comment *"
+                            ></textarea>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="reply-name" class="sr-only">Name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="reply-name"
+                                        name="reply-name"
+                                        required
+                                        placeholder="Name *"
+                                    />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="reply-email" class="sr-only">Email</label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="reply-email"
+                                        name="reply-email"
+                                        required
+                                        placeholder="Email *"
+                                    />
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-primary-2">
+                                <span>POST COMMENT</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </main>
+</template>
+<script>
+import Sticky from 'vue-sticky-directive';
+import BlogOne from '~/components/elements/blogs/BlogOne';
+import Repository, { baseUrl } from '~/repositories/repository.js';
+import { carouselSetting1, carouselSettingSingle } from '~/utilities/carousel';
+
+export default {
+    components: {
+        BlogOne
+    },
+    data: function() {
+        return {
+            blog: null,
+            prevBlog: null,
+            nextBlog: null,
+            relatedBlogs: [],
+            blogCategories: [],
+            loaded: false,
+            baseUrl: baseUrl,
+            shouldSticky: false,
+            carouselSettingSingle: carouselSettingSingle,
+            carouselSetting: {
+                ...carouselSetting1,
+                breakpoints: {
+                    400: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    992: {
+                        slidesPerView: 3
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-related .swiper-next',
+                    prevEl: '.swiper-related .swiper-prev'
+                },
+                pagination: {
+                    el: '.swiper-related .swiper-dots',
+                    clickable: true
+                }
+            }
+        };
+    },
+    directives: {
+        Sticky
+    },
+    computed: {
+        date: function() {
+            let options = {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+                timeZone: 'UTC'
+            };
+
+            return new Date(this.blog.date).toLocaleString('en-us', options);
+        }
+    },
+    created: function() {
+        this.getBlog();
+    },
+    mounted: function() {
+        this.stickyHandle();
+        window.addEventListener('resize', this.stickyHandle, { passive: true });
+    },
+    destroyed: function() {
+        window.removeEventListener('resize', this.stickyHandle);
+    },
+    methods: {
+        getBlog: async function() {
+            this.loaded = false;
+            await Repository.get(`${baseUrl}/single/${this.$route.params.slug}`)
+                .then(response => {
+                    this.blog = { ...response.data.blog };
+                    this.relatedBlogs = [...response.data.relatedBlogs];
+                    this.prevBlog = response.data.prevBlog;
+                    this.nextBlog = response.data.nextBlog;
+                    this.blogCategories = response.data.categories;
+                    this.loaded = true;
+                })
+                .catch(error => ({ error: JSON.stringify(error) }));
+        },
+        stickyHandle: function() {
+            if (window.innerWidth > 991) this.shouldSticky = true;
+            else this.shouldSticky = false;
+        }
+    }
+};
+</script>
