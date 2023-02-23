@@ -23,7 +23,7 @@
                     <div class="product-detail">
                         <figure>
                             <img
-                                v-lazy="`${baseUrl}${prevProduct.sm_pictures[0].url}`"
+                                v-lazy="`${prevProduct.sm_pictures[0].url}`"
                                 alt="product"
                                 :width="prevProduct.sm_pictures[0].width"
                                 :height="prevProduct.sm_pictures[0].height"
@@ -43,7 +43,7 @@
                     <div class="product-detail">
                         <figure>
                             <img
-                                v-lazy="`${baseUrl}${nextProduct.sm_pictures[0].url}`"
+                                v-lazy="`${nextProduct.sm_pictures[0].url}`"
                                 alt="product"
                                 :width="nextProduct.sm_pictures[0].width"
                                 :height="nextProduct.sm_pictures[0].height"

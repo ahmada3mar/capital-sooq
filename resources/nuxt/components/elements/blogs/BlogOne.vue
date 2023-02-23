@@ -10,7 +10,7 @@
 				v-if="blog.type !== 'video'"
 			>
 				<img
-					v-lazy="`${baseUrl}${blog.image[0].url}`"
+					v-lazy="`${blog.image[0].url}`"
 					alt="blog"
 					:width="blog.image[0].width"
 					:height="blog.image[0].height"
@@ -19,7 +19,7 @@
 
 			<template v-else>
 				<img
-					v-lazy="`${baseUrl}${blog.image[0].url}`"
+					v-lazy="`${blog.image[0].url}`"
 					alt="blog"
 					:width="blog.image[0].width"
 					:height="blog.image[0].height"
@@ -49,7 +49,7 @@
 						>
 							<nuxt-link :to="'/blog/single/default/' + blog.slug">
 								<img
-									v-lazy="`${baseUrl}${image.url}`"
+									v-lazy="`${image.url}`"
 									alt="blog"
 									:width="image.width"
 									:height="image.height"

@@ -158,7 +158,7 @@ export default {
 				perPage: this.perPage
 			};
 
-			await Repository.get(`${baseUrl}/blogs/mask-grid`, {
+			await Repository.get(`/blogs/mask-grid`, {
 				params: params
 			})
 				.then(response => {

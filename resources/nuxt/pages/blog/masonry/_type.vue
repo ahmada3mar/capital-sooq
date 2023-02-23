@@ -186,7 +186,7 @@ export default {
 			};
 
 			await Repository.get(
-				`${baseUrl}/blogs/${this.$route.params.type}`,
+				`/blogs/${this.$route.params.type}`,
 				{
 					params: params
 				}

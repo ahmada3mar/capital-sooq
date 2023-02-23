@@ -90,7 +90,7 @@ export default {
         getProduct: async function() {
             this.loaded = false;
             await Repository.get(
-                `${baseUrl}/products/${this.$route.params.slug}`,
+                `/products/${this.$route.params.slug}`,
                 {
                     params: { demo: this.currentDemo }
                 }

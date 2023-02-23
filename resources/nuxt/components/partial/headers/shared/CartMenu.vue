@@ -23,7 +23,7 @@
                     <figure class="product-image-container">
                         <nuxt-link :to="'/product/default/' + product.slug" class="product-image">
                             <img
-                                v-lazy="`${baseUrl}${product.sm_pictures[0].url}`"
+                                v-lazy="`${product.sm_pictures[0].url}`"
                                 alt="product"
                                 :width="product.sm_pictures[0].width"
                                 :height="product.sm_pictures[0].height"

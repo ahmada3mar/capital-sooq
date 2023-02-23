@@ -27,7 +27,7 @@
 						v-if="blog.image.length <=1"
 					>
 						<img
-							v-lazy="`${baseUrl}${blog.image[0].url}`"
+							v-lazy="`${blog.image[0].url}`"
 							alt="blog"
 							:width="blog.image[0].width"
 							:height="blog.image[0].height"
@@ -57,7 +57,7 @@
 										:key="index"
 									>
 										<img
-											v-lazy="`${baseUrl}${image.url}`"
+											v-lazy="`${image.url}`"
 											alt="blog"
 											:width="image.width"
 											:height="image.height"
@@ -587,7 +587,7 @@ export default {
 	methods: {
 		getBlog: async function() {
 			this.loaded = false;
-			await Repository.get(`${baseUrl}/single/${this.$route.params.slug}`)
+			await Repository.get(`/single/${this.$route.params.slug}`)
 				.then(response => {
 					this.blog = { ...response.data.blog };
 					this.relatedBlogs = [...response.data.relatedBlogs];

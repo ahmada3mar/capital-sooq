@@ -342,7 +342,7 @@ export default {
     methods: {
         getProducts: async function() {
             this.loaded = false;
-            await Repository.get(`${baseUrl}/shop`, {
+            await Repository.get(`/shop`, {
                 params: {
                     ...this.$route.query,
                     orderBy: this.orderBy,

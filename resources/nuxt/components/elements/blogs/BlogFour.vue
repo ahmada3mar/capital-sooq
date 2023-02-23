@@ -3,7 +3,7 @@
 		<figure class="entry-media">
 			<nuxt-link :to="'/blog/single/default/' + blog.slug">
 				<img
-					v-lazy="`${baseUrl}${blog.image[0].url}`"
+					v-lazy="`${blog.image[0].url}`"
 					alt="blog"
 					:width="blog.image[0].width"
 					:height="blog.image[0].height"

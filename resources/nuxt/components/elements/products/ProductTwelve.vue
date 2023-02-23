@@ -10,10 +10,10 @@
             >Out Of Stock</span>
 
             <nuxt-link :to="'/product/default/'+ product.slug">
-                <div class="product-card" 
-                v-lazy:background="`${baseUrl}${product.pictures[0].url}`"></div>
-                <div class="product-card product-image-hover" 
-                v-lazy:background="`${baseUrl}${product.sm_pictures[1].url}`"
+                <div class="product-card"
+                v-lazy:background="`${product.pictures[0].url}`"></div>
+                <div class="product-card product-image-hover"
+                v-lazy:background="`${product.sm_pictures[1].url}`"
                 v-if="product.pictures[1]"
                 ></div>
             </nuxt-link>

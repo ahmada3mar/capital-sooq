@@ -12,7 +12,7 @@
         >
             <img
                 id="product-zoom"
-                v-lazy="`${baseUrl}${picture.url}`"
+                v-lazy="`${picture.url}`"
                 alt="product"
                 :width="picture.width"
                 :height="picture.height"
@@ -69,8 +69,8 @@ export default {
                 return [
                     ...acc,
                     {
-                        thumb: `${baseUrl}${cur.url}`,
-                        src: `${baseUrl}${cur.url}`,
+                        thumb: `${cur.url}`,
+                        src: `${cur.url}`,
                         caption: this.product.name
                     }
                 ];
