@@ -5,10 +5,10 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link> 
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item active">{{ pageTitle }}</li>
                     <li class="breadcrumb-item" v-if="$route.query.searchTerm">
@@ -28,14 +28,14 @@
                         <div class="toolbox">
                             <div class="toolbox-left">
                                 <div class="toolbox-info">
-                                    Showing
-                                    <span>{{ products.length }} of {{ totalCount }}</span> Products
+                                     {{ $t('Showing') }}
+                                    <span>{{ products.length }} {{ $t('of') }} {{ totalCount }}</span> {{ $t('Products') }}
                                 </div>
                             </div>
 
                             <div class="toolbox-right">
                                 <div class="toolbox-sort">
-                                    <label for="sortby">Sort by:</label>
+                                    <label for="sortby">{{ $t('Sort by:') }}</label>
                                     <div class="select-custom">
                                         <select
                                             name="sortby"
@@ -44,10 +44,10 @@
                                             @change.prevent="getProducts"
                                             v-model="orderBy"
                                         >
-                                            <option value="default">Default</option>
-                                            <option value="featured">Most Popular</option>
-                                            <option value="rating">Most Rated</option>
-                                            <option value="new">Date</option>
+                                            <option value="default">{{ $t('Default') }}</option>
+                                            <option value="featured">{{ $t('Most Popular') }}</option>
+                                            <option value="rating">{{ $t('Most Rated') }}</option>
+                                            <option value="new">{{ $t('Date') }}</option>
                                         </select>
                                     </div>
                                 </div>

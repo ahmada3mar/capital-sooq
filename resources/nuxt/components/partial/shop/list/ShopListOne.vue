@@ -3,7 +3,7 @@
         <p
             class="no-results"
             v-if="products.length === 0 && loaded"
-        >No products matching your selection.</p>
+        >{{ $t('No products matching your selection.') }}</p>
 
         <template v-else>
             <div v-if="type=='list'" key="list">

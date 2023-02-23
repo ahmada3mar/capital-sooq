@@ -2,8 +2,8 @@
     <div class="sidebar-shop" :class="isSidebar ? 'sidebar-filter' : 'sidebar'">
         <div :class="{'sidebar-filter-wrapper' : isSidebar}">
             <div class="widget widget-clean">
-                <label>Filters:</label>
-                <a href="#" class="sidebar-filter-clear" @click.prevent="cleanAll">Clean All</a>
+                <label>{{ $t('Filters:') }}</label>
+                <a href="#" class="sidebar-filter-clear" @click.prevent="cleanAll">{{ $t('Clean All') }}</a>
             </div>
 
             <div class="widget widget-collapsible">
@@ -12,7 +12,7 @@
                         href="#widget-1"
                         :class="{collapsed: !toggleStates[0]}"
                         @click.prevent="toggleSlide(0)"
-                    >Category</a>
+                    >{{ $t('Category') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[0]" class="show" :duration="200">
@@ -40,7 +40,7 @@
                         href="#widget-2"
                         :class="{collapsed: !toggleStates[1]}"
                         @click.prevent="toggleSlide(1)"
-                    >Size</a>
+                    >{{ $t('Size') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[1]" class="show" :duration="200">
@@ -76,7 +76,7 @@
                         href="#widget-3"
                         :class="{collapsed: !toggleStates[2]}"
                         @click.prevent="toggleSlide(2)"
-                    >Colour</a>
+                    >{{ $t('Colour') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[2]" class="show" :duration="200">
@@ -102,7 +102,7 @@
                         href="#widget-4"
                         :class="{collapsed: !toggleStates[3]}"
                         @click.prevent="toggleSlide(3)"
-                    >Brand</a>
+                    >{{ $t('Brand') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[3]" class="show" :duration="200">
@@ -138,7 +138,7 @@
                         href="#widget-5"
                         :class="{collapsed: !toggleStates[4]}"
                         @click.prevent="toggleSlide(4)"
-                    >Price</a>
+                    >{{ $t('Price') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[4]" class="show" :duration="200">
@@ -146,10 +146,10 @@
                         <div class="filter-price">
                             <div class="filter-price-text d-flex justify-content-between">
                                 <span>
-                                    Price Range:
+                                    {{ $t('Price Range:') }}
                                     <span id="filter-price-range">{{ priceRangeText }}</span>
                                 </span>
-                                <nuxt-link :to="priceFilterRoute" class="pr-2">Filter</nuxt-link>
+                                <nuxt-link :to="priceFilterRoute" class="pr-2">{{ $t('Filter') }}</nuxt-link>
                             </div>
 
                             <vue-nouislider

@@ -18,10 +18,10 @@
                                         <strong>sale</strong>
                                     </h1>
 
-                                    <h3 class="intro-subtitle">Up to 50% off</h3>
+                                    <h3 class="intro-subtitle">{{ $t('Up to 50% off') }}</h3>
 
                                     <nuxt-link :to='localePath("/shop/sidebar/list")' class="btn">
-                                        <span>Shop Now</span>
+                                        <span>{{ $t('Shop Now')}}</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </nuxt-link>
                                     <img
@@ -49,7 +49,7 @@
                                     </h1>
 
                                     <nuxt-link :to='localePath("/shop/sidebar/list")' class="btn">
-                                        <span>Shop Now</span>
+                                        <span>{{ $t('Shop Now') }}</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </nuxt-link>
                                 </div>
@@ -94,7 +94,7 @@
                                             <strong>
                                                 Nova 2023
                                             </strong>
-                                            <br />up to 60% off
+                                            <br /> {{ $t('up to 60% off') }}
                                         </a>
                                     </h3>
 
@@ -102,7 +102,7 @@
                                         to="/shop/sidebar/list"
                                         class="btn btn-outline-white banner-link"
                                     >
-                                        Shop Now
+                                        {{ $t('Shop Now') }}
                                         <i class="icon-long-arrow-right"></i>
                                     </nuxt-link>
                                 </div>
@@ -139,7 +139,7 @@
                                         to="/shop/sidebar/list"
                                         class="btn btn-outline-white banner-link"
                                     >
-                                        Shop Now
+                                       {{ $t('Shop Now')  }}
                                         <i class="icon-long-arrow-right"></i>
                                     </nuxt-link>
                                 </div>
@@ -175,7 +175,7 @@
                                         to="/shop/sidebar/list"
                                         class="btn btn-outline-white banner-link"
                                     >
-                                        Shop Now
+                                        {{ $t('Shop Now')}}
                                         <i class="icon-long-arrow-right"></i>
                                     </nuxt-link>
                                 </div>
@@ -234,7 +234,7 @@
             </a>
             <div class="banner banner-big d-md-block">
                 <div class="banner-content text-center">
-                    <h4 class="banner-subtitle text-white">Best Seller</h4>
+                    <h4 class="banner-subtitle text-white">{{ $t('Best Seller')}}</h4>
 
                     <h3 class="banner-title text-white">Merchant</h3>
 
@@ -244,7 +244,7 @@
                     </p>
 
                     <nuxt-link :to='localePath("/shop/sidebar/4cols")' class="btn btn-primary-white">
-                        <span>Whats selling?</span>
+                        <span>{{ $t('Whats selling?') }}</span>
                         <i class="icon-long-arrow-right"></i>
                     </nuxt-link>
                 </div>
@@ -277,7 +277,7 @@
                                 to="/shop/sidebar/3cols?category=women"
                                 class="btn btn-outline-white banner-link"
                             >
-                                Shop Now
+                             {{ $t('Shop Now') }}   
                                 <i class="icon-long-arrow-right"></i>
                             </nuxt-link>
                         </div>
@@ -308,7 +308,7 @@
                                 to="/shop/sidebar/3cols?category=men"
                                 class="btn btn-outline-white banner-link"
                             >
-                                Shop Now
+                              {{ $t('Shop Now') }} 
                                 <i class="icon-long-arrow-right"></i>
                             </nuxt-link>
                         </div>
@@ -338,7 +338,7 @@
                                 to="/shop/sidebar/3cols?category=women"
                                 class="btn btn-outline-white banner-link"
                             >
-                                Shop Now
+                             {{ $t('Shop Now') }}   
                                 <i class="icon-long-arrow-right"></i>
                             </nuxt-link>
                         </div>
@@ -369,7 +369,7 @@
                                 to="/shop/sidebar/3cols?category=men"
                                 class="btn btn-outline-white banner-link"
                             >
-                                Shop Now
+                              {{ $t( 'Shop Now') }} 
                                 <i class="icon-long-arrow-right"></i>
                             </nuxt-link>
                         </div>
