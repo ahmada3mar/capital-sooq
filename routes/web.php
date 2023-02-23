@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\NoteController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::any('/{any?}', function () {
+Route::any('/{any?}', function (Request $req) {
+    info($req->getHost());
     return File::get(public_path() . '/app/index.html' );
 })->where('any', '.*');

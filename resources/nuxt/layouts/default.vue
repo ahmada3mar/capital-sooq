@@ -1,5 +1,5 @@
 <template lang="html">
-    <div>
+    <div :dir="$dir()">
         <div class="page-wrapper">
             <header-default></header-default>
             <nuxt></nuxt>
