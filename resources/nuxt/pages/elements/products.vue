@@ -238,7 +238,7 @@ export default {
     methods: {
         getProducts: async function() {
             this.loaded = false;
-            await Repository.get(`${baseUrl}/elements/products`)
+            await Repository.get(`/elements/products`)
                 .then(response => {
                     this.products = response.data;
                     this.loaded = true;

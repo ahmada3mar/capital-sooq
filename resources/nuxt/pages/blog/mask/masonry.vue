@@ -158,7 +158,7 @@ export default {
 				perPage: this.perPage
 			};
 
-			await Repository.get(`${baseUrl}/blogs/mask-masonry`, {
+			await Repository.get(`/blogs/mask-masonry`, {
 				params: params
 			})
 				.then(response => {

@@ -164,7 +164,7 @@ export default {
     },
 
     router: {
-        base: '/app',
+        base: '/',
         linkActiveClass: 'link-active',
         linkExactActiveClass: 'active'
     },

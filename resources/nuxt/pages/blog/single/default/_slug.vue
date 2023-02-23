@@ -28,7 +28,7 @@
                                 v-if="blog.image.length <=1"
                             >
                                 <img
-                                    v-lazy="`${baseUrl}${blog.image[0].url}`"
+                                    v-lazy="`${blog.image[0].url}`"
                                     alt="blog"
                                     :width="blog.image[0].width"
                                     :height="blog.image[0].height"
@@ -59,7 +59,7 @@
                                             >
                                                 <a href="#">
                                                     <img
-                                                        v-lazy="`${baseUrl}${image.url}`"
+                                                        v-lazy="`${image.url}`"
                                                         alt="blog"
                                                         :width="image.width"
                                                         :height="image.height"
@@ -565,7 +565,7 @@ export default {
         getBlog: async function() {
             this.loaded = false;
             await Repository.get(
-                `${baseUrl}/single/${this.$route.params.slug}`,
+                `/single/${this.$route.params.slug}`,
                 {
                     params: { demo: this.currentDemo }
                 }

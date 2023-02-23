@@ -40,7 +40,7 @@
                                                         :to="'/product/default/' + product.slug"
                                                     >
                                                         <img
-                                                            v-lazy="`${baseUrl}${product.sm_pictures[0].url}`"
+                                                            v-lazy="`${product.sm_pictures[0].url}`"
                                                             alt="Product"
                                                             :width="product.sm_pictures[0].width"
                                                             :height="product.sm_pictures[0].height"

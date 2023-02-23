@@ -14,7 +14,7 @@
                             @click.prevent="changePicture(index)"
                         >
                             <img
-                                v-lazy="`${baseUrl}${picture.url}`"
+                                v-lazy="`${picture.url}`"
                                 alt="dot"
                                 :width="picture.width"
                                 :height="picture.height"
@@ -42,7 +42,7 @@
                                         :key="index"
                                     >
                                         <img
-                                            v-lazy="`${baseUrl}${picture.url}`"
+                                            v-lazy="`${picture.url}`"
                                             alt="product"
                                             :width="picture.width"
                                             :height="picture.height"

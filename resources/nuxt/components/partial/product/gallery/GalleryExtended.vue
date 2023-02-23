@@ -5,7 +5,7 @@
                 <div class="swiper-slide" v-for="(picture, index) in product.pictures" :key="index">
                     <figure class="product-gallery-image p-0">
                         <img
-                            v-lazy="`${baseUrl}${picture.url}`"
+                            v-lazy="`${picture.url}`"
                             alt="product"
                             :width="picture.width"
                             :height="picture.height"
@@ -70,8 +70,8 @@ export default {
                 return [
                     ...acc,
                     {
-                        thumb: `${baseUrl}${cur.url}`,
-                        src: `${baseUrl}${cur.url}`,
+                        thumb: `${cur.url}`,
+                        src: `${cur.url}`,
                         caption: this.product.name
                     }
                 ];

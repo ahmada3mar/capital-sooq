@@ -171,7 +171,7 @@ export default {
 				perPage: this.perPage
 			};
 
-			await Repository.get(`${baseUrl}/blogs/grid-sidebar`, {
+			await Repository.get(`/blogs/grid-sidebar`, {
 				params: params
 			})
 				.then(response => {

@@ -136,7 +136,7 @@ export default {
     methods: {
         getProducts: async function(samePage = false, loadMore = false) {
             if (!loadMore) this.loaded = false;
-            await Repository.get(`${baseUrl}/shop`, {
+            await Repository.get(`/shop`, {
                 params: {
                     ...this.$route.query,
                     orderBy: this.orderBy,

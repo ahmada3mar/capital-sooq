@@ -8,7 +8,7 @@
                 <span class="product-label label-out" v-if="product.stock === 0">Out Of Stock</span>
                 <img
                     id="product-zoom"
-                    v-lazy="`${baseUrl}${product.pictures[currentIndex].url}`"
+                    v-lazy="`${product.pictures[currentIndex].url}`"
                     alt="product"
                     :width="product.pictures[currentIndex].width"
                     :height="product.pictures[currentIndex].height"
@@ -34,7 +34,7 @@
                     @click.prevent="changePicture(index)"
                 >
                     <img
-                        :src="`${baseUrl}${smPicture.url}`"
+                        :src="`${smPicture.url}`"
                         :width="smPicture.width"
                         :height="smPicture.height"
                         alt="product side"
@@ -86,8 +86,8 @@ export default {
                 return [
                     ...acc,
                     {
-                        thumb: `${baseUrl}${cur.url}`,
-                        src: `${baseUrl}${cur.url}`,
+                        thumb: `${cur.url}`,
+                        src: `${cur.url}`,
                         caption: this.product.name
                     }
                 ];

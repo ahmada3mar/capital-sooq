@@ -156,7 +156,7 @@ export default {
 	methods: {
 		getBlogs: async function() {
 			this.loaded = false;
-			await Repository.get(`${baseUrl}/elements/blogs`)
+			await Repository.get(`/elements/blogs`)
 				.then(response => {
 					this.blogs = response.data;
 

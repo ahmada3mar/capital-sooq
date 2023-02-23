@@ -41,7 +41,7 @@
                             :key="product.id"
                         >
                             <img
-                                :src="`${baseUrl}${product.sm_pictures[0].url}`"
+                                :src="`${product.sm_pictures[0].url}`"
                                 alt="
                                     Product
                                 "
@@ -107,7 +107,7 @@ export default {
                 });
                 this.timeouts.push(
                     setTimeout(() => {
-                        Repository.get(`${baseUrl}/search`, {
+                        Repository.get(`/search`, {
                             params: {
                                 searchTerm: searchTerm,
                                 demo: this.currentDemo

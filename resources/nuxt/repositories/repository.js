@@ -1,7 +1,7 @@
 import axios from 'axios';
 import VueRouter from 'vue-router';
 
-const baseDomain = 'http://localhost:1337';
+const baseDomain = '/api';
 // console.log(window.location.hostname)
 
 export const customHeaders = {

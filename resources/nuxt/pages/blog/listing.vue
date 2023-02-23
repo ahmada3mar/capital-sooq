@@ -155,7 +155,7 @@ export default {
 				params = { ...params, category: this.$route.query.category };
 			}
 
-			await Repository.get(`${baseUrl}/blogs/listing`, {
+			await Repository.get(`/blogs/listing`, {
 				params: params
 			})
 				.then(response => {

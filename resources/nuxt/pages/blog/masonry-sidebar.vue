@@ -171,7 +171,7 @@ export default {
 				perPage: this.perPage
 			};
 
-			await Repository.get(`${baseUrl}/blogs/masonry-sidebar`, {
+			await Repository.get(`/blogs/masonry-sidebar`, {
 				params: params
 			})
 				.then(response => {
