@@ -18,6 +18,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/demo8', function(){
-    return "hi";
+Route::any('/{any?}', function () {
+    sleep(500);
+    return [
+        'products' => [],
+        'topProducts' => [],
+        'blogs' => [],
+        'blogs' => [],
+    ];
+})->where('any', '.*');
+
+Route::get('/shop', function () {
+    return [
+        'products' => [],
+        'totalCount' => 0,
+    ];
 });

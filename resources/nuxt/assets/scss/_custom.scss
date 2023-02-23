@@ -9,7 +9,7 @@ $secondary-color: #e3987e;
 	    left: 0;
 	    margin: 0;
 	}
-	
+
 	.header-left a {
 		display: flex;
 		align-items: center;
@@ -94,7 +94,7 @@ $secondary-color: #e3987e;
 	}
 	.header-right {
 		margin-left: 0;
-	}	
+	}
 
 	.container-fluid .header-center {
 		margin-left: 9rem;
@@ -114,7 +114,7 @@ $secondary-color: #e3987e;
 			background-color: white;
 		}
 	}
-	
+
 	.btn-outline-primary-2 {
 		color: $primary-color;
 		background-color: white;
@@ -184,7 +184,7 @@ hr {
 }
 
 .intro-slider-container .swiper-slide {
-	
+
 	img {
 		width: auto;
 		position: absolute;
@@ -318,7 +318,7 @@ hr {
 			background-color: #ebebeb;
 		}
 	}
-	
+
 	.banner-subtitle {
 		font-weight: 300;
 		font-size: 1.3rem;
@@ -326,25 +326,25 @@ hr {
 		text-transform: uppercase;
 		margin-bottom: 2rem;
 	}
-	
+
 	.banner-title {
 		font-weight: 300;
 		font-size: 2.2rem;
 		line-height: 1.1em;
 		margin-bottom: 2rem;
 		text-transform: uppercase;
-	
+
 		strong {
 			font-weight: 700;
 		}
 	}
-	
+
 	.banner-group {
 		.banner-title {
 			margin-bottom: 4rem;
 		}
 	}
-	
+
 	.banner {
 		.banner-link.btn {
 			padding-left: 1rem;
@@ -352,54 +352,54 @@ hr {
 			min-width: 140px;
 			color: $primary-color;
 			border: .2rem solid $primary-color;
-	
+
 			&:hover,
 			&:focus {
 				color: #fff;
 			}
 		}
 	}
-	
+
 	.banner-content {
 		padding-top: 3.4rem;
 		&.banner-content-right {
 			right: 40px;
 		}
 	}
-	
+
 	.banner-big  {
 		color: $body-text;
 		font-size: 1.5rem;
 		line-height: 1.6;
-	
+
 		.banner-content {
 			padding-top: 0;
 			max-width: 446px;
 			left: 7rem;
 		}
-	
+
 		.banner-subtitle {
 			font-weight: 300;
 			font-size: 1.4rem;
 		}
-	
+
 		.banner-title {
 			font-weight: 700;
 			font-size: 5rem;
 			letter-spacing: .01em;
 			margin-bottom: 1rem;
 		}
-	
+
 		p {
 			letter-spacing: 0;
 			font-size: 1.3rem;
 			line-height: 1.8em;
 		}
-	
+
 		p:last-of-type {
 			margin-bottom: 3.3rem;
 		}
-	
+
 		.btn {
 			padding-top: 1.15rem;
 			padding-bottom: 1.15rem;
@@ -408,7 +408,7 @@ hr {
 			background-color: transparent;
 			border: .2rem solid #fff;
 			letter-spacing: .1em;
-	
+
 			&:hover,
 			&:focus {
 				background-color: #fff;
@@ -420,12 +420,12 @@ hr {
 	.nav.nav-border-anim .nav-link:before {
 		background-color: #333;
 	}
-	
+
 	.nav-pills.nav-big {
 		.nav-item + .nav-item {
 			margin-left: 3.5rem;
 		}
-	
+
 		.nav-link {
 			padding-top: .8rem;
 			padding-bottom: .8rem;
@@ -435,58 +435,58 @@ hr {
 			letter-spacing: .01em;
 			text-transform: uppercase;
 		}
-	
+
 		.nav-item .nav-link {
 			&:hover,
 			&:focus,
 			&.active {
 				color: #333;
 			}
-	
+
 			&.active {
 				border-bottom-color: #333;
 			}
 		}
-	
+
 		.nav-item.show .nav-link {
 			color: #333;
 		}
 	}
-	
+
 	.nav.nav-pills:not(.nav-big) .nav-link:not(:hover):not(:focus):not(.active) {
 		color: #666;
 	}
-	
+
 	/* Product */
 	.product.product-2 {
 		background-color: #fff;
 		.product-action-vertical {
 			top: 2rem
 		}
-	
+
 		.product-cat {
 			color: #ccc;
 		}
-	
+
 		.product-body {
 			text-align: center;
 		}
-	
+
 		.product-media {
 			&:before {
 				@include aspect-ratio(800, 1088);
 			}
 		}
-	
+
 		.product-price {
 			justify-content: center;
 			color: #333;
 		}
-	
+
 		.product-nav {
 			justify-content: center;
 		}
-	
+
 		.product-action {
 			background-color: #222;
 			padding-top: 0;
@@ -496,20 +496,20 @@ hr {
 			color: #ccc;
 			padding-top: 1.1rem;
 			padding-bottom: 1.1rem;
-	
+
 			span {
 					color: #fff;
 					text-transform: uppercase;
 					margin-left: -1.35rem;
 				}
-	
+
 				&::before {
 					color: #fff;
 					opacity: 0;
 					visibility: hidden;
 					transition: all .1s;
 			}
-	
+
 			&:hover,
 			&:focus {
 				color: #fff;
@@ -552,11 +552,11 @@ hr {
 			margin-bottom: 2.5rem;
 		}
 	}
-	
+
 	.nav {
 		width: 100%;
 	}
-	
+
 	.btn-more {
 		padding: 1.15rem 1rem;
 		min-width: 160px;
@@ -565,7 +565,7 @@ hr {
 		color: #222;
 		font-size: 1.3rem;
 		letter-spacing: .1em;
-	
+
 		&:hover,
 		&:focus {
 			background-color: #222;
@@ -573,36 +573,36 @@ hr {
 			border-color: #222;
 		}
 	}
-	
+
 	.icon-box-card {
 		padding-top: 3rem;
 		padding-bottom: 3.2rem;
 		border: .2rem solid #ebebeb;
 		background-color: transparent;
 		transition: all .3s;
-	
+
 		.icon-box-icon {
 			font-size: 3rem;
 			color: $primary-color;
 		}
-	
+
 		.icon-box-title {
 			font-size: 1.6rem;
 			letter-spacing: .01em;
 			text-transform: uppercase;
 			margin-bottom: .3rem;
 		}
-	
+
 		p {
 			font-size: 1.3rem;
 		}
-	
+
 		&:hover,
 		&:focus {
 			color: #fff;
 			border-color: $primary-color;
 			background-color: $primary-color;
-	
+
 			.icon-box-title,
 			.icon-box-icon,
 			p {
@@ -897,7 +897,7 @@ hr {
 			font-size: 11.8rem;
 		}
 	}
-} 
+}
 
 .brands-swiper{
 	padding: 0px 5rem;

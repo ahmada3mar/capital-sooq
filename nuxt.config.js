@@ -5,7 +5,6 @@ export default {
 
     rootDir: './resources/nuxt',
 
-
     head: {
         titleTemplate: 'Capital Sooq',
         title: 'Capital Sooq',

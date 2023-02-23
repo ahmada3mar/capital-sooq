@@ -113,7 +113,7 @@
             </li> -->
             <li :class="{ active: current == 'shop' }">
                 <nuxt-link
-                to="/"
+                :to="localePath('/')"
                     class="sf-with-ul"
                     >Merchants</nuxt-link>
             </li>
