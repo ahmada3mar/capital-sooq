@@ -86,6 +86,7 @@ export default {
                 defer: true
             }
         ],
+
     },
     static: {
         prefix: false
@@ -134,10 +135,24 @@ export default {
             src: '~/plugins/sticky.js',
             ssr: false
         },
+        {
+            src: '~/plugins/direction-control.js',
+            ssr: false
+        },
     ],
     modules: ['@nuxtjs/axios', '@nuxtjs/i18n'],
     i18n: {
-        locales: ['en', 'ar'],
+        locales: [{
+                code: 'en',
+                iso: 'en-US',
+                dir: 'ltr'
+            },
+            {
+                code: 'ar',
+                iso: 'ar-EG',
+                dir: 'rtl',
+            }
+        ],
         defaultLocale: 'en',
         vueI18n: {
             fallbackLocale: 'en',
@@ -153,7 +168,7 @@ export default {
         linkActiveClass: 'link-active',
         linkExactActiveClass: 'active'
     },
-    serverMiddleware: ['~/server-middleware/index.js'],
+    // serverMiddleware: ['~/server-middleware/index.js'],
 
     pageTransition: 'page',
 

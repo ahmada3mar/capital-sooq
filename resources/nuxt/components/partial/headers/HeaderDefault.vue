@@ -10,13 +10,8 @@
                         </button>
 
                         <nuxt-link :to='localePath("/")' class="logo">
-                            <img
-                                v-lazy="'./images/home/logo.png'"
-                                class="bg-white"
-                                alt="Molla Logo"
-                                width="82"
-                                height="22"
-                            />
+                            <img v-lazy="'./images/home/logo.png'" class="bg-white" alt="Molla Logo" width="82"
+                                height="22" />
                         </nuxt-link>
                     </div>
 
@@ -52,19 +47,21 @@ export default {
         StickyHeader
     },
     computed: {
-        isFullwidth: function() {
+        isFullwidth: function () {
             return this.$route.path.includes('fullwidth');
         }
+
     },
+
     methods: {
-        openSignInModal: function() {
+        openSignInModal: function () {
             this.$modal.show(
                 () => import('~/components/elements/modals/SignInModal'),
                 {},
                 { width: '575', height: 'auto', adaptive: true }
             );
         },
-        openMobileMenu: function() {
+        openMobileMenu: function () {
             document.querySelector('body').classList.add('mmenu-active');
         }
     }

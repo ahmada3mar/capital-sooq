@@ -4,15 +4,15 @@ import axios from "axios";
 export default async function (req, res, next) {
     // req is the Node.js http request object
 
-    await  axios.get('http://shpoify.jo/api/test').then(r=>{
-        console.log(r.data)
-        if(r.data == "no"){
-            res.writeHead(301, { Location: "/pages/coming-soon" })
-            res.end()            
-        }else{
-            next()
-        }
-    })
+    // await  axios.get('http://shpoify.jo/api/test').then(r=>{
+    //     console.log(r.data)
+    //     if(r.data == "no"){
+    //         res.writeHead(301, { Location: "/pages/coming-soon" })
+    //         res.end()
+    //     }else{
+    //         next()
+    //     }
+    // })
 
 // console.log(req.url)
 
