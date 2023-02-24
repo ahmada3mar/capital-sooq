@@ -3,10 +3,10 @@
         <div :class="'d-flex align-items-center ' + (fullWidth ? 'container-fluid' : 'container')">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                    <nuxt-link :to='localePath("/")'>o{{ $t('Home') }}</nuxt-link>
                 </li>
                 <li class="breadcrumb-item">
-                    <nuxt-link :to='localePath("/product/default/dark-yellow-lace-cut-out-swing-dress")'>Product</nuxt-link>
+                    <nuxt-link :to='localePath("/product/default/dark-yellow-lace-cut-out-swing-dress")'>{{ $t('Product') }}</nuxt-link>
                 </li>
                 <li class="breadcrumb-item active">{{ current }}</li>
             </ol>
@@ -19,7 +19,7 @@
                     v-if="prevProduct"
                 >
                     <i class="icon-angle-left"></i>
-                    <span>Prev</span>
+                    <span>{{ $t('Prev') }}</span>
                     <div class="product-detail">
                         <figure>
                             <img
@@ -38,7 +38,7 @@
                     class="product-pager-link product-pager-next"
                     v-if="nextProduct"
                 >
-                    <span>Next</span>
+                    <span>{{ $t('Next') }}</span>
                     <i class="icon-angle-right"></i>
                     <div class="product-detail">
                         <figure>

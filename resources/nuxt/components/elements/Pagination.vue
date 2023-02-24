@@ -5,7 +5,7 @@
                 <nuxt-link class="page-link page-link-prev" :to="getPageUrl(currentPage - 1)">
                     <span aria-hidden="true">
                         <i class="icon-long-arrow-left"></i>
-                    </span>Prev
+                    </span> {{ $t('Prev') }}
                 </nuxt-link>
             </li>
 
@@ -23,7 +23,7 @@
 
             <li class="page-item" :class="{ disabled: currentPage === lastPage }">
                 <nuxt-link class="page-link page-link-next" :to="getPageUrl(currentPage + 1)">
-                    Next
+                    {{ $t('Next') }}
                     <span aria-hidden="true">
                         <i class="icon-long-arrow-right"></i>
                     </span>
