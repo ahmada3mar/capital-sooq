@@ -2,19 +2,19 @@
     <nav class="main-nav">
         <ul class="menu">
             <li class="megamenu-container" :class="{ active: current == '/' }">
-                <nuxt-link :to="localePath('/')" class="sf-with-ul" >Home</nuxt-link>
+                <nuxt-link :to="localePath('/')" class="sf-with-ul" > {{ $t('Home') }} </nuxt-link>
             </li>
             <li :class="{ active: current == 'shop' }">
                 <nuxt-link
                     :to="localePath('/shop/sidebar/4cols')"
                     class="sf-with-ul"
-                    >Shop</nuxt-link>
+                    >{{ $t('Shop')}} </nuxt-link>
             </li>
             <li :class="current == 'market' ? 'active' : '' ">
-                <nuxt-link :to="localePath('/shop/market')" >CATEGORIES</nuxt-link>
+                <nuxt-link :to="localePath('/shop/market')" > {{ $t('CATEGORIES') }}</nuxt-link>
 
                 <ul>
-                    <li class="ml-5 mb-1">Popular Categories</li>
+                    <li class="ml-5 mb-1">{{ $t('Popular Categories') }}</li>
                     <li>
                         <nuxt-link  to="/52222">Electric</nuxt-link>
                     </li>
@@ -25,7 +25,7 @@
                         <nuxt-link to="121">
                             <span>
                                 Clothing
-                                <span class="tip tip-new">New</span>
+                                <span class="tip tip-new">{{ $t('New')}}</span>
                             </span>
                         </nuxt-link>
                     </li>
@@ -115,13 +115,13 @@
                 <nuxt-link
                 :to="localePath('/')"
                     class="sf-with-ul"
-                    >Merchants</nuxt-link>
+                    >{{ $t('Merchants') }}</nuxt-link>
             </li>
             <li :class="{ active: current == 'shop' }">
                 <nuxt-link
-                to="/"
+                :to="localePath('/')"
                     class="sf-with-ul"
-                    >FAQs</nuxt-link>
+                    >{{ $t('FAQs')}} </nuxt-link>
             </li>
             <!-- <li :class="{ active: current == 'blog' }">
                 <nuxt-link :to="localePath('/blog/classic')" class="sf-with-ul"

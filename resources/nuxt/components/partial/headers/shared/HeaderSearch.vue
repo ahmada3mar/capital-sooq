@@ -16,13 +16,13 @@
             @submit.prevent="submitSearchForm"
         >
             <div class="header-search-wrapper" @click.stop>
-                <label for="q" class="sr-only">Search</label>
+                <label for="q" class="sr-only">{{ $t('Search')}}</label>
                 <input
                     type="text"
                     class="form-control"
                     name="q"
                     id="q"
-                    placeholder="Search product ..."
+                   :placeholder="$t('Search product ...') "
                     required
                     v-model="searchTerm"
                     @input="searchProducts"

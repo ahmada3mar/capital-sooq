@@ -79,16 +79,16 @@ export default {
             tabsData: [
                 {
                     id: 'featured',
-                    title: 'Featured',
+                    title: this.$t('Featured'),
                     active: true
                 },
                 {
                     id: 'on-sale',
-                    title: 'On Sale'
+                    title: this.$t('On Sale')
                 },
                 {
                     id: 'top-rated',
-                    title: 'Top Rated'
+                    title: this.$t('Top Rated')
                 }
             ],
             carouselSetting1: {

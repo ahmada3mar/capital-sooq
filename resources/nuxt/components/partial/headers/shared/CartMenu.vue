@@ -42,21 +42,21 @@
             </div>
 
             <div class="dropdown-cart-total">
-                <span>Total</span>
+                <span>Total </span>
 
                 <span class="cart-total-price">${{ priceTotal.toFixed(2) }}</span>
             </div>
 
             <div class="dropdown-cart-action">
-                <nuxt-link :to='localePath("/shop/cart")' class="btn btn-primary">View Cart</nuxt-link>
+                <nuxt-link :to='localePath("/shop/cart")' class="btn btn-primary">{{ $t('View Cart') }}</nuxt-link>
                 <nuxt-link :to='localePath("/shop/checkout")' class="btn btn-outline-primary-2">
-                    <span>Checkout</span>
+                    <span>{{ $t('Checkout') }} </span>
                     <i class="icon-long-arrow-right"></i>
                 </nuxt-link>
             </div>
         </div>
         <div class="dropdown-menu dropdown-menu-right" v-else key="noCart">
-            <p class="text-center">No products in the cart.</p>
+            <p class="text-center">{{ $t('No products in the cart.') }}</p>
         </div>
     </div>
 </template>

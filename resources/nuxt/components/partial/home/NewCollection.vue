@@ -1,7 +1,7 @@
 <template>
     <div class="container recent-arrivals">
         <div class="heading-flex align-items-center mb-3">
-            <h2 class="title title-lg text-center">Recent Arrivals</h2>
+            <h2 class="title title-lg text-center">{{ $t('Recent Arrivals') }}</h2>
 
             <tabs
                 class="nav-pills nav-pills nav-border-anim justify-content-center"
@@ -67,7 +67,7 @@
         </div>
         <div class="more-container text-center mt-3 mb-3">
             <nuxt-link to="/shop/sidebar/4cols" class="btn btn-outline-dark-3 btn-more">
-                <span>View More</span>
+                <span>{{  $t('View More') }}</span>
                 <i class="icon-long-arrow-right"></i>
             </nuxt-link>
         </div>
