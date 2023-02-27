@@ -76,7 +76,7 @@
                         href="#widget-3"
                         :class="{collapsed: !toggleStates[2]}"
                         @click.prevent="toggleSlide(2)"
-                    >{{ $t('Colour') }}</a>
+                    >{{ $t('Color') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[2]" class="show" :duration="200">

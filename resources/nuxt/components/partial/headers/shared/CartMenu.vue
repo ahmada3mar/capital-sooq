@@ -42,7 +42,7 @@
             </div>
 
             <div class="dropdown-cart-total">
-                <span>Total </span>
+                <span>{{ $t('Total') }} </span>
 
                 <span class="cart-total-price">${{ priceTotal.toFixed(2) }}</span>
             </div>

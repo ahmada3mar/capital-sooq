@@ -5,10 +5,10 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item active">{{ $t('home') }}</li>
                 </ol>
@@ -28,8 +28,8 @@
                                 @click="clickCoupon($event)"
                             />
                             <label for="checkout-discount-input" class="text-truncate">
-                                Have a coupon?
-                                <span>Click here to enter your code</span>
+                                {{ $t('Have a coupon?') }}
+                                <span>{{ $t('Click here to enter your code') }}</span>
                             </label>
                         </form>
                     </div>
@@ -37,16 +37,16 @@
                     <form action="#">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h2 class="checkout-title">Billing Details</h2>
+                                <h2 class="checkout-title">{{ $t('Billing Details') }}</h2>
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label>First Name *</label>
+                                        <label>{{ $t('First Name') }} *</label>
                                         <input type="text" class="form-control" required />
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label>Last Name *</label>
+                                        <label>{{ $t('ast Name') }}L *</label>
                                         <input type="text" class="form-control" required />
                                     </div>
                                 </div>
@@ -54,26 +54,26 @@
                                 <label>Company Name (Optional)</label>
                                 <input type="text" class="form-control" />
 
-                                <label>Country *</label>
+                                <label>{{ $t('Country') }} *</label>
                                 <input type="text" class="form-control" required />
 
-                                <label>Street address *</label>
+                                <label>{{ $t('Street address') }} *</label>
                                 <input
                                     type="text"
                                     class="form-control"
-                                    placeholder="House number and Street name"
+                                    :placeholder="$t('House number and Street name')"
                                     required
                                 />
                                 <input
                                     type="text"
                                     class="form-control"
-                                    placeholder="Appartments, suite, unit etc ..."
+                                    :placeholder="$t('Appartments, suite, unit etc ...')"
                                     required
                                 />
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label>Town / City *</label>
+                                        <label>{{ $t('Town / City') }} *</label>
                                         <input type="text" class="form-control" required />
                                     </div>
 
@@ -85,17 +85,17 @@
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label>Postcode / ZIP *</label>
+                                        <label>{{ $t('Postcode / ZIP') }} *</label>
                                         <input type="text" class="form-control" required />
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <label>Phone *</label>
+                                        <label>{{ $t('Phone') }} *</label>
                                         <input type="tel" class="form-control" required />
                                     </div>
                                 </div>
 
-                                <label>Email address *</label>
+                                <label>{{ $t('Email address') }} *</label>
                                 <input type="email" class="form-control" required />
 
                                 <div class="custom-control custom-checkbox">
@@ -107,7 +107,7 @@
                                     <label
                                         class="custom-control-label"
                                         for="checkout-create-acc"
-                                    >Create an account?</label>
+                                    >{{ $t('Create an account?') }}</label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
@@ -119,10 +119,10 @@
                                     <label
                                         class="custom-control-label"
                                         for="checkout-diff-address"
-                                    >Ship to a different address?</label>
+                                    >{{ $t('Ship to a different address?') }}</label>
                                 </div>
 
-                                <label>Order notes (optional)</label>
+                                <label>{{ $t('Order notes (optional)') }}</label>
                                 <textarea
                                     class="form-control"
                                     cols="30"
@@ -133,13 +133,13 @@
 
                             <aside class="col-lg-3">
                                 <div class="summary">
-                                    <h3 class="summary-title">Your Order</h3>
+                                    <h3 class="summary-title">{{ $t('Your Order') }}</h3>
 
                                     <table class="table table-summary">
                                         <thead>
                                             <tr>
-                                                <th>Product</th>
-                                                <th>Total</th>
+                                                <th>{{ $t('Product') }}</th>
+                                                <th>{{ $t('Total') }}</th>
                                             </tr>
                                         </thead>
 
@@ -154,16 +154,16 @@
                                             </tr>
 
                                             <tr class="summary-subtotal">
-                                                <td>Subtotal:</td>
+                                                <td>{{ $t('Subtotal') }}:</td>
                                                 <td>${{ priceTotal }}</td>
                                             </tr>
 
                                             <tr>
-                                                <td>Shipping:</td>
-                                                <td>Free shipping</td>
+                                                <td>{{ $t('Shipping') }}:</td>
+                                                <td>{{ $t('Free shipping') }}</td>
                                             </tr>
                                             <tr class="summary-total">
-                                                <td>Total:</td>
+                                                <td>{{ $t('Total') }}:</td>
                                                 <td>${{ priceTotal }}</td>
                                             </tr>
                                         </tbody>
@@ -178,14 +178,14 @@
                                                         :class="{expanded: toggleState[0], collapsed: !toggleState[0]}"
                                                         @click.prevent="changeToggle(0)"
                                                         href="#"
-                                                    >Direct bank transfer</a>
+                                                    >{{ $t('Direct bank transfer') }}</a>
                                                 </h2>
                                             </div>
 
                                             <vue-slide-toggle :open="toggleState[0]">
                                                 <div
                                                     class="card-body"
-                                                >Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</div>
+                                                >{{ $t('Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.') }}</div>
                                             </vue-slide-toggle>
                                         </div>
 
@@ -197,7 +197,7 @@
                                                         :class="{expanded: toggleState[1], collapsed: !toggleState[1]}"
                                                         @click.prevent="changeToggle(1)"
                                                         href="#"
-                                                    >Check payments</a>
+                                                    >{{ $t('Check payments') }}</a>
                                                 </h2>
                                             </div>
 
@@ -216,7 +216,7 @@
                                                         :class="{expanded: toggleState[2], collapsed: !toggleState[2]}"
                                                         @click.prevent="changeToggle(2)"
                                                         href="#"
-                                                    >Cash on delivery</a>
+                                                    >{{ $t('Cash on delivery') }}</a>
                                                 </h2>
                                             </div>
 
@@ -236,7 +236,7 @@
                                                         @click.prevent="changeToggle(3)"
                                                         href="#"
                                                     >
-                                                        PayPal
+                                                    {{ $t('PayPal') }} 
                                                         <small
                                                             class="float-right paypal-link"
                                                         >What is PayPal?</small>
@@ -260,7 +260,7 @@
                                                         @click.prevent="changeToggle(4)"
                                                         href="#"
                                                     >
-                                                        Credit Card (Stripe)
+                                                    {{ $t('Credit Card') }} 
                                                         <img
                                                             v-lazy="'./images/payments-summary.png'"
                                                             alt="payments cards"
@@ -282,8 +282,8 @@
                                         type="submit"
                                         class="btn btn-outline-primary-2 btn-order btn-block"
                                     >
-                                        <span class="btn-text">Place Order</span>
-                                        <span class="btn-hover-text">Proceed to Checkout</span>
+                                        <span class="btn-text">{{ $t('Place Order') }}</span>
+                                        <span class="btn-hover-text">{{ $t('Proceed to Checkout') }}</span>
                                     </button>
                                 </div>
                             </aside>

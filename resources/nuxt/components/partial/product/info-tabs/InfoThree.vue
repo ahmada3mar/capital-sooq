@@ -8,7 +8,7 @@
                         :class="{expanded: toggleState[0], collapsed: !toggleState[0]}"
                         @click.prevent="changeToggle(0)"
                         href="#"
-                    >Description</a>
+                    >{{ $t('Description') }}</a>
                 </h2>
             </div>
 
@@ -36,7 +36,7 @@
                         :class="{expanded: toggleState[1], collapsed: !toggleState[1]}"
                         @click.prevent="changeToggle(1)"
                         href="#"
-                    >Additional Information</a>
+                    >{{ $t('Additional Information') }}</a>
                 </h2>
             </div>
 
@@ -47,7 +47,7 @@
                             class="mb-2"
                         >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
 
-                        <h3>Fabric & care</h3>
+                        <h3>{{ $t('Fabric & care') }}</h3>
                         <ul>
                             <li>Faux suede fabric</li>
                             <li>Gold tone metal hoop handles.</li>
@@ -57,7 +57,7 @@
                             <li>Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm</li>
                         </ul>
 
-                        <h3>Size</h3>
+                        <h3>{{ $t('Size') }}</h3>
                         <p>one size</p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         :class="{expanded: toggleState[2], collapsed: !toggleState[2]}"
                         @click.prevent="changeToggle(2)"
                         href="#"
-                    >Shipping & Returns</a>
+                    >{{ $t('Shipping & Returns') }}</a>
                 </h2>
             </div>
 
@@ -83,11 +83,11 @@
                             We deliver to over 100 countries around the world. For full details of the delivery options we offer, please view our
                             <a
                                 href="#"
-                            >Delivery information</a>
+                            >{{ $t('Delivery information') }}</a>
                             <br />We hope you’ll love every purchase, but if you ever need to return an item you can do so within a month of receipt. For full details of how to make a return, please view our
                             <a
                                 href="#"
-                            >Returns information</a>
+                            >{{ $t('Returns information') }}</a>
                         </p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         :class="{expanded: toggleState[3], collapsed: !toggleState[3]}"
                         @click.prevent="changeToggle(3)"
                         href="#"
-                    >Reviews(2)</a>
+                    >{{ $t('Reviews') }}(2)</a>
                 </h2>
             </div>
 
@@ -122,7 +122,7 @@
                                         </div>
                                     </div>
 
-                                    <span class="review-date">6 days ago</span>
+                                    <span class="review-date">6 {{ $t('days ago') }}</span>
                                 </div>
 
                                 <div class="col">
@@ -134,10 +134,10 @@
 
                                     <div class="review-action">
                                         <a href="#">
-                                            <i class="icon-thumbs-up"></i>Helpful (2)
+                                            <i class="icon-thumbs-up"></i>{{ $t('Helpful') }} (2)
                                         </a>
                                         <a href="#">
-                                            <i class="icon-thumbs-down"></i>Unhelpful (0)
+                                            <i class="icon-thumbs-down"></i>{{ $t('Unhelpful') }} (0)
                                         </a>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                         </div>
                                     </div>
 
-                                    <span class="review-date">5 days ago</span>
+                                    <span class="review-date">5 {{ $t('days ago') }}</span>
                                 </div>
 
                                 <div class="col">
@@ -169,10 +169,10 @@
 
                                     <div class="review-action">
                                         <a href="#">
-                                            <i class="icon-thumbs-up"></i>Helpful (0)
+                                            <i class="icon-thumbs-up"></i>{{ $t('Helpful') }} (0)
                                         </a>
                                         <a href="#">
-                                            <i class="icon-thumbs-down"></i>Unhelpful (0)
+                                            <i class="icon-thumbs-down"></i>{{ $t('Unhelpful') }} (0)
                                         </a>
                                     </div>
                                 </div>

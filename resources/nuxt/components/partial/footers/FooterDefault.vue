@@ -17,12 +17,12 @@
                             <div class="widget-about-info">
                                 <div class="row">
                                     <div class="col-sm-6 col-md-4">
-                                        <span class="widget-about-title">Got Question? Call us 24/7</span>
+                                        <span class="widget-about-title">{{ $t('Got Question? Call us') }}</span>
                                         <a href="tel:123456789">+0123 456 789</a>
                                     </div>
 
                                     <div class="col-sm-6 col-md-8">
-                                        <span class="widget-about-title">Payment Method</span>
+                                        <span class="widget-about-title">{{ $t('Payment Method') }}</span>
                                         <figure class="footer-payments">
                                             <img
                                                 v-lazy="'./images/payments.png'"
@@ -40,7 +40,7 @@
 
                     <div class="col-sm-4 col-lg-2">
                         <div class="widget">
-                            <h4 class="widget-title">Information</h4>
+                            <h4 class="widget-title">{{ $t('Information') }}</h4>
 
                             <ul class="widget-list">
                                 <li>
@@ -50,40 +50,13 @@
                                     <a href="#">How to shop on Molla</a>
                                 </li>
                                 <li>
-                                    <a href="#">FAQ</a>
+                                    <a href="#">{{ $t('FAQ') }}</a>
                                 </li>
                                 <li>
-                                    <nuxt-link :to='localePath("/pages/contact")'>Contact us</nuxt-link>
+                                    <nuxt-link :to='localePath("/pages/contact")'>{{ $t('Contact us') }}</nuxt-link>
                                 </li>
                                 <li>
-                                    <nuxt-link :to='localePath("/pages/login")'>Log in</nuxt-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-2">
-                        <div class="widget">
-                            <h4 class="widget-title">Customer Service</h4>
-
-                            <ul class="widget-list">
-                                <li>
-                                    <a href="#">Payment Methods</a>
-                                </li>
-                                <li>
-                                    <a href="#">Money-back guarantee!</a>
-                                </li>
-                                <li>
-                                    <a href="#">Returns</a>
-                                </li>
-                                <li>
-                                    <a href="#">Shipping</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms and conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#">Privacy Policy</a>
+                                    <nuxt-link :to='localePath("/pages/login")'>{{ $t('Log in') }}</nuxt-link>
                                 </li>
                             </ul>
                         </div>
@@ -91,23 +64,50 @@
 
                     <div class="col-sm-4 col-lg-2">
                         <div class="widget">
-                            <h4 class="widget-title">My Account</h4>
+                            <h4 class="widget-title">{{ $t('Customer Service') }}</h4>
 
                             <ul class="widget-list">
                                 <li>
-                                    <a href="#">Sign In</a>
+                                    <a href="#">{{ $t('Payment Methods') }}</a>
                                 </li>
                                 <li>
-                                    <nuxt-link :to='localePath("/shop/cart")'>View Cart</nuxt-link>
+                                    <a href="#">{{ $t('Money-back guarantee!') }}</a>
                                 </li>
                                 <li>
-                                    <nuxt-link :to='localePath("/shop/wishlist")'>My Wishlist</nuxt-link>
+                                    <a href="#">{{ $t('Returns') }}</a>
                                 </li>
                                 <li>
-                                    <nuxt-link :to='localePath("/shop/dashboard")'>Track My Order</nuxt-link>
+                                    <a href="#">{{ $t('Shipping') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Help</a>
+                                    <a href="#">{{ $t('Terms and conditions') }}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{{ $t('Privacy Policy') }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-2">
+                        <div class="widget">
+                            <h4 class="widget-title">{{ $t('My Account') }}</h4>
+
+                            <ul class="widget-list">
+                                <li>
+                                    <a href="#">{{ $t('Sign In') }}</a>
+                                </li>
+                                <li>
+                                    <nuxt-link :to='localePath("/shop/cart")'>{{ $t('View Cart') }}</nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link :to='localePath("/shop/wishlist")'>{{ $t('My Wishlist') }}</nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link :to='localePath("/shop/dashboard")'>{{ $t('Track My Order') }}</nuxt-link>
+                                </li>
+                                <li>
+                                    <a href="#">{{ $t('Help') }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -124,15 +124,15 @@
 
                 <ul class="footer-menu">
                     <li>
-                        <a href="#">Terms Of Use</a>
+                        <a href="#">{{ $t('Terms Of Use') }}</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">{{ $t('Privacy Policy') }}</a>
                     </li>
                 </ul>
 
                 <div class="social-icons social-icons-color">
-                    <span class="social-label">Social Media</span>
+                    <span class="social-label">{{ $t('Social Media') }}</span>
                     <a
                         href="#"
                         class="social-icon social-facebook"

@@ -8,7 +8,7 @@
                 <a href="#" class="sidebar-filter-clear" @click.prevent="cleanAllFilter">Clean All</a>
             </div>
             <div class="widget">
-                <h3 class="widget-title">Browse Category</h3>
+                <h3 class="widget-title">{{ $t('Browse Category') }}</h3>
 
                 <div class="widget-body">
                     <div class="filter-items filter-items-count">

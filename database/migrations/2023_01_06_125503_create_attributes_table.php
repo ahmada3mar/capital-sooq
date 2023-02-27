@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->on('products')->references('id')->onDelete('CASCADE');
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -5,16 +5,16 @@
         <nav class="breadcrumb-nav breadcrumb-with-filter">
             <div class="container">
                 <button class="sidebar-toggler p-0" @click="openSidebar">
-                    <i class="icon-bars"></i>Filters
+                    <i class="icon-bars"></i>{{ $t('Filters') }}
                 </button>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
-                    <li class="breadcrumb-item">Product Category</li>
+                    <li class="breadcrumb-item">{{ $t('Product Category') }}</li>
                     <li class="breadcrumb-item active">Boxed</li>
                 </ol>
             </div>
@@ -36,9 +36,9 @@
                                 <nuxt-link class="banner-link" to="/shop/sidebar/3cols">
                                     <h3 class="banner-title">Dresses</h3>
 
-                                    <h4 class="banner-subtitle">3 Products</h4>
+                                    <h4 class="banner-subtitle">3 {{ $t('Products') }}</h4>
 
-                                    <span class="banner-link-text">Shop Now</span>
+                                    <span class="banner-link-text">{{ $t('Shop Now') }}</span>
                                 </nuxt-link>
                             </div>
 
@@ -53,9 +53,9 @@
                                 <nuxt-link class="banner-link" to="/shop/sidebar/3cols">
                                     <h3 class="banner-title">Jackets</h3>
 
-                                    <h4 class="banner-subtitle">2 Products</h4>
+                                    <h4 class="banner-subtitle">2 {{ $t('Products') }}</h4>
 
-                                    <span class="banner-link-text">Shop Now</span>
+                                    <span class="banner-link-text">{{ $t('Shop Now') }}</span>
                                 </nuxt-link>
                             </div>
                         </div>
