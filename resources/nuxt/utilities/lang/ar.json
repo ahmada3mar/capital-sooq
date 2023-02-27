@@ -25,7 +25,7 @@
     "Recent Arrivals" : "وصل حديثاً",
     "View More": "عرض المزيد",
     "Showing": "عرض",
-    "Products" : "المنتجات",
+    "Products" : "منتجات",
     "Sort by:": "ترتيب حسب",
     "Sort by":"ترتيب حسب",
     "Default" : "الافتراضي",
@@ -173,7 +173,12 @@
     "CONTINUE SHOPPING":"مواصلة التسوق",
     "RETURN TO SHOP":"العودة الى المتجر",
     "No products added to the cart":"لا توجد منتجات في عربة التسوق",
-    "More Products":"المزيد من المنتجات"
+    "More Products":"المزيد من المنتجات",
+    "Product Category":"صنف المنتج",
+    "Fullwidth":"العرض كامل",
+    "Grid Categories Fullwidth":"العرض كامل"
+
+
 
 
 }
