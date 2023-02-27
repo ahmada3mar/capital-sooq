@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\IndustryController;
+use App\Http\Controllers\Admin\OrganizationController;
+use App\Http\Controllers\Admin\PlanController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Middleware\TokenMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +23,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(LoginController::class)
+    ->group(function () {
+        Route::get('/logout',  'logout');
+        Route::post('/login',  'login');
+        Route::post('/change-password', 'changePassword');
+        Route::post('/reset-password', 'resetPassword');
+        Route::post('/refresh-token', 'refresh');
+    });
+
+
+Route::middleware(TokenMiddleware::class)->group(function () {
+
+    Route::resource('users' , UserController::class);
+    Route::resource('roles' , RoleController::class);
+    Route::resource('plans', PlanController::class);
+    Route::resource('industries', IndustryController::class);
+    Route::resource('organizations', OrganizationController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('categories', CategoryController::class);
+
+
+
+    Route::get('all-roles' ,[ RoleController::class , 'allRoles']);
+    Route::get('all-plans' ,[ PlanController::class , 'allPlans']);
+    Route::get('all-industries' ,[ IndustryController::class , 'allIndustries']);
+
 });
 
 Route::any('/{any?}', function () {
