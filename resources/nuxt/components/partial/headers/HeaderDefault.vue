@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="header-left">
                         <button class="mobile-menu-toggler" @click="openMobileMenu">
-                            <span class="sr-only">Toggle mobile menu</span>
+                            <span class="sr-only">{{ $t('Toggle mobile menu') }}</span>
                             <i class="icon-bars"></i>
                         </button>
 
@@ -23,7 +23,7 @@
                         <header-search></header-search>
                         <wishlist-menu></wishlist-menu>
                         <cart-menu></cart-menu>
-                        <nuxt-link class="mx-2" :to="switchLocalePath('ar')">AR</nuxt-link>
+                        <nuxt-link class="mx-2" :to="switchLocalePath('ar')">{{ $t('AR') }}</nuxt-link>
                     </div>
                 </div>
             </div>

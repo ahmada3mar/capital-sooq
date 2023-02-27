@@ -95,7 +95,7 @@
                                 :class="{'btn-disabled': !canAddToCart(product, qty) || (product.variants.length > 0 && ! showVariationPrice) }"
                                 @click.prevent="addCart"
                             >
-                                <span>add to cart</span>
+                                <span>{{ $t('add to cart') }}</span>
                             </a>
                         </div>
 
@@ -108,7 +108,7 @@
                                 v-if="! isInWishlist(product)"
                                 key="notInWishlist"
                             >
-                                <span>Add to Wishlist</span>
+                                <span>{{ $t('Add to Wishlist') }}</span>
                             </a>
                             <nuxt-link
                                 to="/shop/wishlist"
@@ -117,14 +117,14 @@
                                 v-else
                                 key="inWishlist"
                             >
-                                <span>Go to Wishlist</span>
+                                <span>{{ $t('Go to Wishlist') }}</span>
                             </nuxt-link>
                         </div>
                     </div>
 
                     <div class="product-details-footer details-footer-col">
                         <div class="product-cat">
-                            <span>Category:</span>
+                            <span>{{ $t('Category') }}:</span>
                             <span v-for="(cat, index) of product.category" :key="index">
                                 <nuxt-link :to="{path: '/shop/sidebar/list', query: {category: cat.slug}}"
                                 >{{ cat.name }}</nuxt-link>
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="social-icons social-icons-sm">
-                            <span class="social-label">Share:</span>
+                            <span class="social-label">{{ $t('Share') }}:</span>
                             <a
                                 href="javascript:;"
                                 class="social-icon"

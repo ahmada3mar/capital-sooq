@@ -9,13 +9,13 @@
                 </button>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
-                    <li class="breadcrumb-item">Product Category</li>
-                    <li class="breadcrumb-item active">Fullwidth</li>
+                    <li class="breadcrumb-item">{{ $t('Product Category') }}</li>
+                    <li class="breadcrumb-item active">{{ $t('Fullwidth') }}</li>
                 </ol>
             </div>
         </nav>
@@ -38,9 +38,9 @@
                                         <nuxt-link class="banner-link" to="/shop/sidebar/3cols">
                                             <h3 class="banner-title">Jackets</h3>
 
-                                            <h4 class="banner-subtitle">2 Products</h4>
+                                            <h4 class="banner-subtitle">2 {{ $t('Products') }}</h4>
 
-                                            <span class="banner-link-text">Shop Now</span>
+                                            <span class="banner-link-text">{{ $t('Shop Now') }}</span>
                                         </nuxt-link>
                                     </div>
                                 </div>
@@ -189,16 +189,16 @@
                 <div class="sidebar-filter-wrapper">
                     <div class="widget widget-clean">
                         <label @click="closeSidebar">
-                            <i class="icon-close"></i>Filters
+                            <i class="icon-close"></i>{{ $t('Filters') }}
                         </label>
                         <a
                             href="#"
                             class="sidebar-filter-clear"
                             @click.prevent="cleanAllFilter"
-                        >Clean All</a>
+                        >{{ $t('Clean All') }}</a>
                     </div>
                     <div class="widget">
-                        <h3 class="widget-title">Browse Category</h3>
+                        <h3 class="widget-title">{{ $t('Browse Category') }}</h3>
 
                         <div class="widget-body">
                             <div class="filter-items filter-items-count">
@@ -278,7 +278,7 @@
                                         <label
                                             class="custom-control-label"
                                             for="cat-6"
-                                        >Grid Categories Fullwidth</label>
+                                        >{{ $t('Grid Categories Fullwidth') }}</label>
                                     </div>
 
                                     <span class="item-count">13</span>

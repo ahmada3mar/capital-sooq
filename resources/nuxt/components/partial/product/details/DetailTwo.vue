@@ -7,7 +7,7 @@
                 <div class="ratings-val" :style="{width: product.ratings * 20 + '%'}"></div>
                 <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
             </div>
-            <span class="ratings-text mt-0">( {{ product.review }} Reviews )</span>
+            <span class="ratings-text mt-0">( {{ product.review }} {{ $t('Reviews') }} )</span>
         </div>
 
         <div class="product-price" v-if="product.stock==0" key="outPrice">
@@ -34,7 +34,7 @@
 
         <template v-if="product.variants.length > 0">
             <div class="details-filter-row details-row-size">
-                <label>Color:</label>
+                <label>{{ $t('Color') }}:</label>
 
                 <div class="product-nav product-nav-dots">
                     <a
@@ -58,7 +58,7 @@
                         v-model="selectedVariant.size"
                         @change="selectSize"
                     >
-                        <option value="null">Select a size</option>
+                        <option value="null">{{ $t('Select a size') }}</option>
                         <option
                             :value="item.size"
                             v-for="(item, index) in sizeArray"
@@ -68,9 +68,9 @@
                 </div>
 
                 <a href="javascript:;" class="size-guide mr-4">
-                    <i class="icon-th-list"></i>size guide
+                    <i class="icon-th-list"></i>{{ $t('size guide') }}
                 </a>
-                <a href="#" @click.prevent="clearSelection" v-if="showClear">clear</a>
+                <a href="#" @click.prevent="clearSelection" v-if="showClear">{{ $t('clear') }}</a>
             </div>
             <vue-slide-toggle :open="showVariationPrice">
                 <div
@@ -88,7 +88,7 @@
                     :class="{'btn-disabled': !canAddToCart(product, qty) || (product.variants.length > 0 && ! showVariationPrice) }"
                     @click.prevent="addCart"
                 >
-                    <span>add to cart</span>
+                    <span>{{ $t('add to cart') }}</span>
                 </a>
             </div>
 
@@ -101,7 +101,7 @@
                     v-if="! isInWishlist(product)"
                     key="notInWishlist"
                 >
-                    <span>Add to Wishlist</span>
+                    <span>{{ $t('Add to Wishlist') }}</span>
                 </a>
                 <nuxt-link
                     to="/shop/wishlist"
@@ -110,14 +110,14 @@
                     v-else
                     key="inWishlist"
                 >
-                    <span>Go to Wishlist</span>
+                    <span>{{ $t('Go to Wishlist') }}</span>
                 </nuxt-link>
             </div>
         </div>
 
         <div class="product-details-footer">
             <div class="product-cat">
-                <span>Category:</span>
+                <span>{{ $t('Category') }}:</span>
                 <span v-for="(cat, index) of product.category" :key="index">
                     <nuxt-link
                         :to="{path: '/shop/sidebar/list', query: {category: cat.slug}}"

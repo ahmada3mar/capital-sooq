@@ -2,8 +2,8 @@
     <div class="sidebar-shop" :class="isSidebar ? 'sidebar-filter' : 'sidebar'">
         <div :class="{'sidebar-filter-wrapper' : isSidebar}">
             <div class="widget widget-clean">
-                <label>Filters:</label>
-                <nuxt-link :to="$route.path" class="sidebar-filter-clear">Clean All</nuxt-link>
+                <label>{{ $t('Filters') }}:</label>
+                <nuxt-link :to="$route.path" class="sidebar-filter-clear">{{ $t('Clean All') }}</nuxt-link>
             </div>
             <div class="widget widget-collapsible">
                 <h3 class="widget-title">
@@ -11,7 +11,7 @@
                         href="#widget-1"
                         :class="{collapsed: !toggleStates[0]}"
                         @click.prevent="toggleSlide(0)"
-                    >Category</a>
+                    >{{ $t('Category') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[0]" class="show" :duration="200">
@@ -39,7 +39,7 @@
                         href="#widget-4"
                         :class="{collapsed: !toggleStates[3]}"
                         @click.prevent="toggleSlide(3)"
-                    >Brand</a>
+                    >{{ $t('Brand') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[3]" class="show" :duration="200">
@@ -75,7 +75,7 @@
                         href="#widget-2"
                         :class="{collapsed: !toggleStates[1]}"
                         @click.prevent="toggleSlide(1)"
-                    >Customer Rating</a>
+                    >{{ $t('Customer Rating') }}</a>
                 </h3>
 
                 <vue-slide-toggle :open="toggleStates[1]" class="show" :duration="200">

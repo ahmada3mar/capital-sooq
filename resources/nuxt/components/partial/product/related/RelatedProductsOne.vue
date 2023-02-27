@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="title text-center mb-4">You May Also Like</h2>
+        <h2 class="title text-center mb-4">{{ $t('You May Also Like') }}</h2>
 
         <div v-if="products.length == 0">
             <div class="swiper-carousel carousel-with-shadow">
