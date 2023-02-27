@@ -5,12 +5,12 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
-                    <li class="breadcrumb-item active">Shopping Cart</li>
+                    <li class="breadcrumb-item active">{{ $t('Shopping Cart') }}</li>
                 </ol>
             </div>
         </nav>
@@ -23,10 +23,10 @@
                             <table class="table table-cart table-mobile">
                                 <thead>
                                     <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
+                                        <th>{{ $t('Product') }}</th>
+                                        <th>{{ $t('Price') }}</th>
+                                        <th>{{ $t('Quantity') }}</th>
+                                        <th>{{ $t('Total') }}</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -103,7 +103,7 @@
                                     class="btn btn-outline-dark-2"
                                     @click.prevent="updateCart({cartItems: cartItems})"
                                 >
-                                    <span>UPDATE CART</span>
+                                    <span> {{ $t('UPDATE CART') }} </span>
                                     <i class="icon-refresh"></i>
                                 </a>
                             </div>
@@ -111,17 +111,17 @@
 
                         <aside class="col-lg-3">
                             <div class="summary summary-cart">
-                                <h3 class="summary-title">Cart Total</h3>
+                                <h3 class="summary-title">{{ $t('Cart Total') }}</h3>
 
                                 <table class="table table-summary">
                                     <tbody>
                                         <tr class="summary-subtotal">
-                                            <td>Subtotal:</td>
+                                            <td>{{ $t('Subtotal') }}:</td>
                                             <td>${{ priceTotal.toFixed(2) }}</td>
                                         </tr>
 
                                         <tr class="summary-shipping">
-                                            <td>Shipping:</td>
+                                            <td>{{ $t('Shipping') }}:</td>
                                             <td>&nbsp;</td>
                                         </tr>
 
@@ -139,7 +139,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="free-shipping"
-                                                    >Free Shipping</label>
+                                                    >{{ $t('Free Shipping') }}</label>
                                                 </div>
                                             </td>
                                             <td>$0.00</td>
@@ -159,7 +159,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="standart-shipping"
-                                                    >Standard:</label>
+                                                    >{{ $t('Standard') }}:</label>
                                                 </div>
                                             </td>
                                             <td>$10.00</td>
@@ -179,7 +179,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="express-shipping"
-                                                    >Express:</label>
+                                                    >{{ $t('Express') }}:</label>
                                                 </div>
                                             </td>
                                             <td>$20.00</td>
@@ -187,7 +187,7 @@
 
                                         <tr class="summary-shipping-estimate">
                                             <td>
-                                                Estimate for Your Country
+                                                {{ $t('Estimat shipping date') }} 
                                                 <br />
                                                 <nuxt-link :to='localePath("/shop/dashboard")'>Change address</nuxt-link>
                                             </td>
@@ -195,7 +195,7 @@
                                         </tr>
 
                                         <tr class="summary-total">
-                                            <td>Total:</td>
+                                            <td>{{ $t('Total') }}:</td>
                                             <td>${{ (priceTotal + shipping).toFixed(2) }}</td>
                                         </tr>
                                     </tbody>
@@ -204,14 +204,14 @@
                                 <nuxt-link
                                     to="/shop/checkout"
                                     class="btn btn-outline-primary-2 btn-order btn-block"
-                                >PROCEED TO CHECKOUT</nuxt-link>
+                                >{{ $t('PROCEED TO CHECKOUT') }}</nuxt-link>
                             </div>
 
                             <nuxt-link
                                 to="/shop/sidebar/list"
                                 class="btn btn-outline-dark-2 btn-block mb-3"
                             >
-                                <span>CONTINUE SHOPPING</span>
+                                <span>{{ $t('CONTINUE SHOPPING') }}</span>
                                 <i class="icon-refresh"></i>
                             </nuxt-link>
                         </aside>
@@ -221,12 +221,12 @@
                         <div class="col-12">
                             <div class="cart-empty-page text-center">
                                 <i class="cart-empty icon-shopping-cart"></i>
-                                <p class="px-3 py-2 cart-empty mb-3">No products added to the cart</p>
+                                <p class="px-3 py-2 cart-empty mb-3">{{ $t('No products added to the cart') }} </p>
                                 <p class="return-to-shop mb-0">
                                     <nuxt-link
                                         to="/shop/sidebar/list"
                                         class="btn btn-primary"
-                                    >RETURN TO SHOP</nuxt-link>
+                                    >{{ $t('RETURN TO SHOP') }}</nuxt-link>
                                 </p>
                             </div>
                         </div>

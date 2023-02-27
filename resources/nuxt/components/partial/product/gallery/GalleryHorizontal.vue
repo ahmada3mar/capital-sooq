@@ -2,10 +2,10 @@
     <div class="product-gallery" v-if="product">
         <div class="row m-0">
             <figure class="product-main-image">
-                <span class="product-label label-new" v-if="product.new">New</span>
-                <span class="product-label label-sale" v-if="product.sale_price">Sale</span>
-                <span class="product-label label-top" v-if="product.top">Top</span>
-                <span class="product-label label-out" v-if="product.stock === 0">Out Of Stock</span>
+                <span class="product-label label-new" v-if="product.new">{{ $t('New') }}</span>
+                <span class="product-label label-sale" v-if="product.sale_price">{{ $t('Sale') }}</span>
+                <span class="product-label label-top" v-if="product.top">{{ $t('Top') }}</span>
+                <span class="product-label label-out" v-if="product.stock === 0">{{ $t('Out Of Stock') }}</span>
                 <img
                     id="product-zoom"
                     v-lazy="`${product.pictures[currentIndex].url}`"

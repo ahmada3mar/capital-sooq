@@ -3,7 +3,7 @@
         <p
             class="no-results"
             v-if="products.length === 0 && loaded"
-        >No products matching your selection.</p>
+        >{{ $t('No products matching your selection.') }}</p>
         <div class="row">
             <template v-if="!loaded">
                 <div class="col-6 col-md-4 col-xl-3 mb-2" v-for="item in fakeArray" :key="item">

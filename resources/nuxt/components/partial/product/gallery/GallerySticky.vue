@@ -1,9 +1,9 @@
 <template>
     <div class="product-gallery product-gallery-separated" v-if="product">
-        <span class="product-label label-new" v-if="product.new">New</span>
-        <span class="product-label label-sale" v-if="product.sale_price">Sale</span>
-        <span class="product-label label-top" v-if="product.top">Top</span>
-        <span class="product-label label-out" v-if="product.stock === 0">Out Of Stock</span>
+        <span class="product-label label-new" v-if="product.new">{{ $t('New') }} </span>
+        <span class="product-label label-sale" v-if="product.sale_price">{{ $t('Sale') }}</span>
+        <span class="product-label label-top" v-if="product.top">{{ $t('Top') }}</span>
+        <span class="product-label label-out" v-if="product.stock === 0">{{ $t('Out Of Stock') }}</span>
 
         <figure
             class="product-main-image"

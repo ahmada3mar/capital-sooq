@@ -5,12 +5,12 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>Home</nuxt-link>
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/shop/sidebar/list")'>Shop</nuxt-link>
+                        <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
                     </li>
-                    <li class="breadcrumb-item active">Wishlist</li>
+                    <li class="breadcrumb-item active">{{ $t('Wishlist') }}</li>
                 </ol>
             </div>
         </nav>
@@ -20,9 +20,9 @@
                 <table class="table table-wishlist table-mobile">
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Stock Status</th>
+                            <th>{{ $t('Product') }}</th>
+                            <th>{{ $t('Price') }}</th>
+                            <th>{{ $t('Stock Status') }}</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -83,7 +83,7 @@
                                         :to="'/product/default/' + product.slug"
                                         v-if="product.variants.length > 0"
                                     >
-                                        <i class="icon-list-alt"></i>Select Options
+                                        <i class="icon-list-alt"></i>{{ $t('Select Options') }}
                                     </nuxt-link>
                                     <button
                                         class="btn btn-block btn-outline-primary-2"
@@ -108,7 +108,7 @@
 
                 <div class="wishlist-share">
                     <div class="social-icons social-icons-sm mb-2">
-                        <label class="social-label">Share on:</label>
+                        <label class="social-label">{{ $t('Share on') }}:</label>
                         <a href="#" class="social-icon" title="Facebook" target="_blank">
                             <i class="icon-facebook-f"></i>
                         </a>
@@ -131,8 +131,8 @@
             <div class="container" v-else key="noWishlist">
                 <div class="text-center">
                     <i class="icon-heart-o wishlist-empty d-block"></i>
-                    <span class="d-block mt-2">No products added to wishlist</span>
-                    <nuxt-link :to='localePath("/shop/sidebar/list")' class="btn btn-primary mt-2">Go Shop</nuxt-link>
+                    <span class="d-block mt-2">{{ $t('No products added to wishlist') }}</span>
+                    <nuxt-link :to='localePath("/shop/sidebar/list")' class="btn btn-primary mt-2">{{ $t('Go to Shop') }}</nuxt-link>
                 </div>
             </div>
         </div>
