@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->on('orders')->references('id')->onDelete('RESTRICT');
 
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

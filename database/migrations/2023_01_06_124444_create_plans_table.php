@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
+            $table->boolean('active')->default(true);
             $table->float('price');
-            $table->string('title');
+            $table->string('name');
             $table->text('description');
             $table->integer('users_limit')->default(2);
             $table->integer('products_limit')->default(100);
-            $table->integer('transactions_fees')->default(2);
+            $table->float('transactions_fees')->default(2);
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

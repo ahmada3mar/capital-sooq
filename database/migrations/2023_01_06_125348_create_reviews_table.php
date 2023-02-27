@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('user_id')->on('users')->references('id')->onDelete('CASCADE');
 
             $table->text('comments')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

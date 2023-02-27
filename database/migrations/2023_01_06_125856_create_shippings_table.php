@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('cost')->default(0.00);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

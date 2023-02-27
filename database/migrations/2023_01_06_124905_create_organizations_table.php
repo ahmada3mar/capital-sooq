@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('email');
-            $table->string('domain')->unique()->index();
+            $table->string('domain')->unique()->index()->nullable();
             $table->string('primary_domain')->unique()->index();
             $table->string('address')->nullable();
             $table->string('longitude')->nullable();
@@ -30,11 +30,11 @@ return new class extends Migration
                 ->on('industries')
                 ->references('id')->onDelete('RESTRICT');
 
-            $table->unsignedBigInteger('plan');
-            $table->foreign('plan')
+            $table->unsignedBigInteger('plan_id');
+            $table->foreign('plan_id')
                 ->on('plans')
                 ->references('id')->onDelete('RESTRICT');
-            $table->date('expired_at')->nullable();
+            $table->timestamp('expired_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
