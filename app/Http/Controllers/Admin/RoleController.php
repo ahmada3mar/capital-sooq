@@ -2,38 +2,40 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Requests\RoleRequest;
+use App\Models\Role;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
-
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        //
+        $data = $request->validated();
+        $role = Role::create($data);
+        $role->givePermissionTo($data['permissions_ids']);
+        return \response('success');
     }
-
-
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoleRequest $request, Role $role)
     {
-        //
+        $data = $request->validated();
+        $role->update($data);
+        return  $role->syncPermissions($data['permissions_ids']);
     }
+
 
     public function allRoles()
     {
