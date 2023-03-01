@@ -30,10 +30,10 @@ export const getters = {
     canAddToCart: state => ( product, qty = 1 ) => {
         var find = state.data.find( item => item.id == product.id );
         if ( find ) {
-            if ( product.stock == 0 || ( product.stock < ( find.qty + qty ) ) ) return false;
+            if ( (product.stock == 0 && !product.digital)|| ( product.stock < ( find.qty + qty ) ) ) return false;
             else return true;
         } else {
-            if ( product.stock == 0 || ( product.stock < qty ) ) return false;
+            if ( (product.stock == 0 && !product.digital)|| ( product.stock < qty ) ) return false;
             else return true;
         }
     }

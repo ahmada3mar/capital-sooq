@@ -5,7 +5,7 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link> 
+                        <nuxt-link :to='localePath("/")'>{{ $t('Home') }}</nuxt-link>
                     </li>
                     <li class="breadcrumb-item">
                         <nuxt-link :to='localePath("/shop/sidebar/list")'>{{ $t('Shop') }}</nuxt-link>
@@ -209,12 +209,11 @@ export default {
                     ...this.$route.query,
                     orderBy: this.orderBy,
                     perPage: this.perPage,
-                    demo: this.currentDemo
                 }
             })
                 .then(response => {
-                    this.products = response.data.products;
-                    this.totalCount = response.data.totalCount;
+                    this.products = response.data.data;
+                    this.totalCount = response.data.total;
                     this.loaded = true;
 
                     if (samePage) {
