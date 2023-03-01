@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Mail\PasswordReset;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Mail;
@@ -16,7 +17,7 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable, HasRoles, HasFactory, HasPermissions;
+    use Notifiable, HasRoles, HasFactory, HasPermissions ,SoftDeletes;
 
     protected $pere_page = 10;
 
