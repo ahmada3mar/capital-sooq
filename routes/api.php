@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\OrganizationController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RoleController;
@@ -43,9 +44,13 @@ Route::middleware(TokenMiddleware::class)->group(function () {
     Route::resource('products', ProductController::class);
     Route::resource('categories', CategoryController::class);
 
+    Route::resource('permissions', PermissionController::class);
+    Route::resource('categories', CategoryController::class);
+
 
 
     Route::get('all-roles' ,[ RoleController::class , 'allRoles']);
+    Route::get('all-permissions' ,[ PermissionController::class , 'allPermissions']);
     Route::get('all-plans' ,[ PlanController::class , 'allPlans']);
     Route::get('all-industries' ,[ IndustryController::class , 'allIndustries']);
 
