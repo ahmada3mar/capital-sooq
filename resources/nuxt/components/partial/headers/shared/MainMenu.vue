@@ -6,7 +6,7 @@
             </li>
             <li :class="{ active: current == 'shop' }">
                 <nuxt-link
-                    :to="localePath('/shop/sidebar/4cols')"
+                    :to="localePath('/shop')"
                     class="sf-with-ul"
                     >{{ $t('Shop')}} </nuxt-link>
             </li>
