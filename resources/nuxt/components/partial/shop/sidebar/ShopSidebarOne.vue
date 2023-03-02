@@ -34,21 +34,35 @@
                 </vue-slide-toggle>
             </div>
 
-            <div class="widget widget-collapsible">
+            <div v-for="([name,attributesValues], index ) in Object.entries(filterData.attributesValues)" :key="index" class="widget widget-collapsible">
                 <h3 class="widget-title mb-2">
                     <a
                         href="#widget-2"
-                        :class="{collapsed: !toggleStates[1]}"
-                        @click.prevent="toggleSlide(1)"
-                    >{{ $t('Size') }}</a>
+                        :class="{collapsed: !toggleStates[index+1]}"
+                        @click.prevent="toggleSlide(index+1)"
+                    >{{ name }}</a>
                 </h3>
 
-                <vue-slide-toggle :open="toggleStates[1]" class="show" :duration="200">
-                    <div class="widget-body pt-0">
+                <vue-slide-toggle  :open="toggleStates[index+1]" class="show" :duration="200">
+                    <div v-if="name == 'colors'" class="widget-body pt-0">
+                        <div class="filter-colors">
+                            <nuxt-link
+                                :to="getColorUrl(item)"
+                                :style="{'background-color': item}"
+                                v-for="(item, index) in attributesValues"
+                                :key="index"
+                                :class="{selected: colorSelected(item)}"
+                            >
+                                <span class="sr-only">{{ item.name }}</span>
+                            </nuxt-link>
+                        </div>
+                    </div>
+
+                    <div v-else class="widget-body pt-0">
                         <div class="filter-items">
                             <div
                                 class="filter-item"
-                                v-for="(item, index) in filterData.sizes"
+                                v-for="(item, index) in attributesValues"
                                 :key="index"
                             >
                                 <div class="custom-control custom-checkbox">
@@ -62,7 +76,7 @@
                                     <label
                                         class="custom-control-label"
                                         :for="'size-' + index"
-                                    >{{ item.slug }}</label>
+                                    >{{ item }}</label>
                                 </div>
                             </div>
                         </div>
@@ -70,31 +84,7 @@
                 </vue-slide-toggle>
             </div>
 
-            <div class="widget widget-collapsible">
-                <h3 class="widget-title mb-2">
-                    <a
-                        href="#widget-3"
-                        :class="{collapsed: !toggleStates[2]}"
-                        @click.prevent="toggleSlide(2)"
-                    >{{ $t('Color') }}</a>
-                </h3>
 
-                <vue-slide-toggle :open="toggleStates[2]" class="show" :duration="200">
-                    <div class="widget-body pt-0">
-                        <div class="filter-colors">
-                            <nuxt-link
-                                :to="getColorUrl(item)"
-                                :style="{'background-color': item.color}"
-                                v-for="(item, index) in filterData.colors"
-                                :key="index"
-                                :class="{selected: colorSelected(item)}"
-                            >
-                                <span class="sr-only">{{ item.color_name }}</span>
-                            </nuxt-link>
-                        </div>
-                    </div>
-                </vue-slide-toggle>
-            </div>
 
             <div class="widget widget-collapsible">
                 <h3 class="widget-title mb-2">
@@ -168,14 +158,14 @@
 
 <script>
 import { VueSlideToggle } from 'vue-slide-toggle';
-import { shopData } from '~/utilities/data';
 
 export default {
     components: {
         VueSlideToggle
     },
     props: {
-        isSidebar: Boolean
+        isSidebar: Boolean,
+        shopData:Object,
     },
     data: function() {
         return {
@@ -191,7 +181,7 @@ export default {
                 }
             },
             toggleStates: [true, true, true, true, true],
-            filterData: shopData
+            filterData: this.shopData
         };
     },
     computed: {
