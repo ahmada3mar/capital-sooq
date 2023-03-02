@@ -42,12 +42,11 @@ export default {
     props: {
         products: Array,
         perPage: Number,
-        loaded: Boolean
+        loaded: Boolean,
+        type:String
     },
     computed: {
-        type: function() {
-            return this.$route.params.type;
-        },
+
         gridClass: function() {
             if (this.type === 'list' || this.type === '2cols') return 'col-6';
             if (this.type === '3cols') return 'col-6 col-md-4 col-lg-4';

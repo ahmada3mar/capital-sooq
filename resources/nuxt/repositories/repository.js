@@ -1,7 +1,7 @@
 import axios from 'axios';
 import VueRouter from 'vue-router';
 
-const baseDomain = 'https://d-themes.com/vue/molla/server';
+const baseDomain = '/api';
 // console.log(window.location.hostname)
 
 export const customHeaders = {

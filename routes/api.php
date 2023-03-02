@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Middleware\TokenMiddleware;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +57,14 @@ Route::middleware(TokenMiddleware::class)->group(function () {
 
 });
 
+Route::get('/shop' , function(){
+    // sleep(3);
+    $products = Product::with('attributes' , 'galleries' , 'category' , 'organization')-> paginate();
+     $products->data = $products->makeHidden('cost');
+     return $products;
+});
+
+
 Route::any('/{any?}', function () {
     sleep(500);
     return [
@@ -66,9 +75,3 @@ Route::any('/{any?}', function () {
     ];
 })->where('any', '.*');
 
-Route::get('/shop', function () {
-    return [
-        'products' => [],
-        'totalCount' => 0,
-    ];
-});
